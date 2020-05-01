@@ -42,12 +42,13 @@ public class modifier extends HttpServlet {
            String Prenom = request.getParameter("Prenom");  
            String Email = request.getParameter("Email");
            String Login = request.getParameter("Login");  
-           String Motdepasse = request.getParameter("Motdepasse"); 
+           String Motdepasse = request.getParameter("Motdepasse");
+           String Photo = request.getParameter("Photo");
            
            
            connexionController conn = new connexionController();
             Connection c= conn.getConnection();
-            String req="Update administrateur set Nom='"+Nom+"' , Prenom='"+Prenom+"' , Email='"+Email+"' , Login='"+Login+"' , Motdepasse= '"+Motdepasse+"' where Matricule="+Matricule+" " ;
+            String req="Update administrateur set Nom='"+Nom+"' , Prenom='"+Prenom+"' , Email='"+Email+"' , Login='"+Login+"' , Motdepasse= '"+Motdepasse+"' , Photo= '"+Photo+"' where Matricule=11 " ;
             System.out.print(req);
             int rs = conn.executeUpdate(req);
             conn.executeUpdate(req);
