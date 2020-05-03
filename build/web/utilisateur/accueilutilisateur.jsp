@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/logo.png" />
+    
+      
+    <!-- Css pub accueil -->
+    
+    <!-- Core Stylesheet -->
+    <link href="stylepubaccueil.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive/responsive.css" rel="stylesheet">
+    
+    <!-- End Css pub accueil -->
   </head>
   <body>
       <%
@@ -248,31 +259,111 @@
         <div class="main-panel">
           <div class="content-wrapper">             
               
-            <div class="row">
-              <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                  
-                    <div class="row mt-3">
-                      <div class="col-6 pr-1">
-                        <img src="assets/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                        <img src="assets/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
-                      </div>
-                      <div class="col-6 pl-1">
-                        <img src="assets/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                        <img src="assets/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
-                      </div>
+            
+              
+              
+              
+              
+              
+              
+              
+              <div class="row">
+                <!-- Logo Area Start -->
+                <div class="col-12">
+                    <div class="logo_area text-center">
+                        <a href="index.jsp" class="yummy-logo"><strong>Proposer & Gagner</strong></a>
                     </div>
-                    <div class="d-flex mt-5 align-items-top">
-                      
-                      <div class="ml-auto">
-                        <i class="mdi mdi-heart-outline text-muted"></i>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
+              
+              
+              
+              <!-- ****** Welcome Post Area Start ****** -->
+    <section class="welcome-post-sliders owl-carousel">
+
+        <!-- Single Slide -->
+        <div class="welcome-single-slide">
+            <!-- Post Thumb -->
+            <img src="assets/images/categorie1/centrifigeuse.jpg" alt="">
+            <!-- Overlay Text -->
+            <div class="project_title">
+                <div class="post-date-commnents d-flex">
+                    <a href="#">May 19, 2017</a>
+                    <a href="#">5 Comment</a>
+                </div>
+                <a href="#">
+                    <h5>Centrifugeuse Fruits et Legumes, Aicok , Extracteur de Jus</h5>
+                </a>
+            </div>
+        </div>
+
+        <!-- Single Slide -->
+        <div class="welcome-single-slide">
+            <!-- Post Thumb -->
+            <img src="assets/images/categorie5/chambre_enfant.jpg" alt="">
+            <!-- Overlay Text -->
+            <div class="project_title">
+                <div class="post-date-commnents d-flex">
+                    <a href="#">May 19, 2017</a>
+                    <a href="#">5 Comment</a>
+                </div>
+                <a href="#">
+                    <h5>OEuf NYC, une marque de meubles design pour enfants de haute qualité.</h5>
+                </a>
+            </div>
+        </div>
+
+        <!-- Single Slide -->
+        <div class="welcome-single-slide">
+            <!-- Post Thumb -->
+            <img src="assets/images/categorie1/friteuse.jpg" alt="">
+            <!-- Overlay Text -->
+            <div class="project_title">
+                <div class="post-date-commnents d-flex">
+                    <a href="#">May 19, 2017</a>
+                    <a href="#">5 Comment</a>
+                </div>
+                <a href="#">
+                    <h5>Ambiano</h5>
+                </a>
+            </div>
+        </div>
+
+        <!-- Single Slide -->
+        <div class="welcome-single-slide">
+            <!-- Post Thumb -->
+            <img src="assets/images/categorie4/living.jpg" alt="">
+            <!-- Overlay Text -->
+            <div class="project_title">
+                <div class="post-date-commnents d-flex">
+                    <a href="#">May 19, 2017</a>
+                    <a href="#">5 Comment</a>
+                </div>
+                <a href="#">
+                    <h5>LIVING TV SYMPHONIE SCANDINAVE</h5>
+                </a>
+            </div>
+        </div>
+
+        <!-- Single Slide -->
+        <div class="welcome-single-slide">
+            <!-- Post Thumb -->
+            <img src="assets/images/categorie5/salon.jpg" alt="">
+            <!-- Overlay Text -->
+            <div class="project_title">
+                <div class="post-date-commnents d-flex">
+                    <a href="#">May 19, 2017</a>
+                    <a href="#">5 Comment</a>
+                </div>
+                <a href="#">
+                    <h5>Le plus beau est à venir. </h5>
+                </a>
+            </div>
+        </div>
+
+    </section>
+            
+            
         
           </div>
           <!-- content-wrapper ends -->
@@ -342,5 +433,18 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+    
+    
+   <!-- js pubaccueil --!>
+     <!-- Jquery-2.2.4 js -->
+    <script src="../jspubaccueil/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../jspubaccueil/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="../jspubaccueil/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="../jspubaccueil/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="../jspubaccueil/active.js"></script>
   </body>
 </html>
