@@ -332,7 +332,7 @@
         <!-- Single Slide -->
         <div class="welcome-single-slide">
             <!-- Post Thumb -->
-            <img src="assets/images/categorie4/living.jpg" alt="">
+            <img src="assets/images/categorie1/seche_cheveux.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
                 <div class="post-date-commnents d-flex">

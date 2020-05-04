@@ -286,7 +286,7 @@
                 
                 <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-info card-img-holder text-white">                  
-                    <img src="../assets/images/categorie1/centrifigeuse.jpg" class="card-img-absolute" alt="circle-image" />                 
+                    <img src="assets/images/categorie1/centrifigeuse.jpg" class="card-img-absolute" alt="circle-image" />                 
                     <h3 class="mb-5"> <br/><br/>  <span class="marge"></span></h3>
                     <h6> <br/><br/> <span class="marge">  Centrifigeuse </span> </h6>                
                 </div>
@@ -294,7 +294,7 @@
                              
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">           
-                    <img src="../assets/images/categorie1/fer_a_repasser.jpg" class="card-img-absolute" alt="circle-image" />                 
+                    <img src="assets/images/categorie1/fer_a_repasser.jpg" class="card-img-absolute" alt="circle-image" />                 
                     <h3 class="mb-5"> <br/><br/>  <span class="marge"></span></h3>
                     <h6> <br/><br/> <span class="marge"> Fer à repasser </span> </h6>
               
@@ -304,7 +304,7 @@
               
                 <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">           
-                    <img src="../assets/images/categorie1/friteuse.jpg" class="card-img-absolute" alt="circle-image" />                 
+                    <img src="assets/images/categorie1/friteuse.jpg" class="card-img-absolute" alt="circle-image" />                 
                     <h3 class="mb-5"> <br/><br/>  <span class="marge"></span></h3>
                     <h6> <br/><br/> <span class="marge"> Friteuse </span> </h6>
               
@@ -314,7 +314,7 @@
               
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-danger card-img-holder text-white">           
-                    <img src="../assets/images/categorie1/panini.jpg" class="card-img-absolute" alt="circle-image" />                 
+                    <img src="assets/images/categorie1/panini.jpg" class="card-img-absolute" alt="circle-image" />                 
                     <h3 class="mb-5"> <br/><br/>  <span class="marge"></span></h3>
                     <h6> <br/><br/> <span class="marge"> Panini </span> </h6>
               
@@ -324,7 +324,7 @@
                 
                 <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-info card-img-holder text-white">                  
-                    <img src="../assets/images/categorie1/seche_cheveux.jpg" class="card-img-absolute" alt="circle-image" />                 
+                    <img src="assets/images/categorie1/seche_cheveux.jpg" class="card-img-absolute" alt="circle-image" />                 
                     <h3 class="mb-5"> <br/><br/>  <span class="marge"></span></h3>
                     <h6> <br/><br/> <span class="marge"> Sèche cheveux </span> </h6>                
                 </div>

@@ -19,7 +19,14 @@
     <link rel="shortcut icon" href="assets/images/logo.png" />
     
 
+    <!-- Css pub accueil -->
 
+    <!-- Core Stylesheet -->
+    <link href="stylepubaccueil.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="csspubaccueil/responsive/responsive.css" rel="stylesheet">
+    <!-- End Css pub accueil -->
   </head>
   <body>
        <%
@@ -86,285 +93,25 @@
                         <div class="header-w3l">
                             <h1>   <span>L</span>ps<span>P</span>lus </h1>
                             </div>
-                        <div class="h"> 
-                            <h1> Bienvenu <%=nom%> <%=prenom%> </h1>
-                        </div>                   
-                       
-                        <h2> Créer un compte </h2> 
-                       <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="input-group">                                    
-                                <input type="text" class="form-control" name="Matricule" placeholder="Matricule" required><span class="marge"></span><span class="marge"></span>
-                            </div>
-                         
-                            <div class="input-group">               
-                                <input type="text" class="form-control" name="CIN" placeholder="CIN" required>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="input-group">               
-                                <input type="text" class="form-control" name="Nom" placeholder="Nom" required><span class="marge"></span><span class="marge"></span>
-                            </div>
-                          
-                            <div class="input-group">               
-                                <input type="text" class="form-control" name="Prenom" placeholder="Prénom" required>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                     <div class="row">                       
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Sexe</label>
-                            <div class="col-sm-4">
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> Homme </label>
-                              </div>
-                            </div>
-                            <div class="col-sm-5">
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2"> Femme </label>
-                              </div>
-                            </div>
-                         
-                            
-                               <label class="col-sm-3 col-form-label">Date naissance</label> 
-                                  
-                               <div class="col-sm-9">                                
-                                <select class="form-controll">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                                <option>21</option>
-                                <option>22</option>
-                                <option>23</option>
-                                <option>24</option>
-                                <option>25</option>
-                                <option>26</option>
-                                <option>27</option>
-                                <option>28</option>
-                                <option>29</option>
-                                <option>30</option>
-                                <option>31</option>     
-                                </select>              
-                                <select class="form-controll">
-                                <option>Janvier</option>
-                                <option>Février</option>
-                                <option>Mars</option>
-                                <option>Avril</option>
-                                <option>Mai</option>
-                                <option>Juin</option>
-                                <option>Juillet</option>
-                                <option>Août</option>
-                                <option>Septembre</option>
-                                <option>Octobre</option>
-                                <option>Nouvembre</option>
-                                <option>Décembre</option>
-                                </select>
-                                <select class="form-controll">
-                                <option>1980</option>
-                                <option>1981</option>
-                                <option>1982</option>
-                                <option>1983</option>
-                                <option>1984</option>
-                                <option>1985</option>
-                                <option>1986</option>
-                                <option>1987</option>
-                                <option>1988</option>
-                                <option>1989</option>
-                                <option>1990</option>
-                                <option>1991</option>
-                                <option>1992</option>
-                                <option>1993</option>
-                                <option>1994</option>
-                                <option>1995</option>
-                                <option>1996</option>
-                                <option>1997</option>
-                                <option>1998</option>
-                                <option>1999</option>
-                                <option>2000</option>
-                                <option>2001</option>
-                                <option>2002</option>
-                                <option>2003</option>
-                                <option>2004</option>
-                                <option>2005</option>
-                                <option>2006</option>
-                                <option>2007</option>
-                                <option>2008</option>
-                                <option>2009</option>
-                                <option>2010</option>
-                                <option>2011</option>
-                                <option>2012</option>
-                                <option>2013</option>
-                                <option>2014</option>
-                                <option>2015</option>
-                                <option>2016</option>
-                                <option>2017</option>
-                                <option>2018</option>
-                                <option>2019</option>
-                                <option>2020</option>
-                              </select>                              
-                            </div>
-                       
-                          </div>
-                        </div>
-                      </div>
-                      
-                       <div class="row">                       
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="input-group"> 
-                                <a  id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                                    <input type="text" class="form-control" name="Telephone" placeholder="Téléphone" required>
-                                </a> 
-                                <div class="dropdown-menu dropdown-menu-right " >
-                                      <h6 class="p-3 mb-0">8 chiffres</h6>
-                                </div>
-                                <span class="marge"></span><span class="marge"></span> 
-                            </div>
-         
-                 
-                            <div class="input-group">               
-                                <input type="text" class="form-control" name="Fixe" placeholder="Fixe" required>
-                            </div>
-                          </div>
-                        </div>
-                      </div>     
-                            
-                     <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="input-group">
-                              <select class="form-control">
-                                  <option selected="Ville" disabled> Ville </option>
-                                <option>Tunisie</option>
-                                <option>France </option>
-                              </select><span class="marge"></span><span class="marge"></span>
-                            </div>
-                         
-                             <div class="input-group">               
-                                 <input type="text" class="form-control" name="Adresse" placeholder="Adresse" required>
-                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                             <div class="input-group">               
-                                <input type="text" class="form-control" name="Codepostale" placeholder="Code postale" required><span class="marge"></span><span class="marge"></span>
-                             </div>
-                         
-                            <div class="input-group">
-                                <a id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                                    <input type="email" class="form-control" name="Email" placeholder="Email" required>
-                                </a> 
-                                <div class="dropdown-menu dropdown-menu-right " >
-                                      <h6 class="p-3 mb-0">x.y@leoni.com</h6>
-                                </div>                            
-                            </div>
-                              
-                          </div>
-                        </div>
-                      </div>
                         
-                      <div class="row">                        
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="input-group">
-                              <select class="form-control">
-                              <option selected="situationfamiliale" disabled> Situation familiale</option>                                 
-                                <option>Célibataire</option>
-                                <option>En couple</option>
-                                <option>Marié(e)</option>
-                                <option>Divorcé(e)</option>                              
-                              </select><span class="marge"></span><span class="marge"></span>
-                            </div>
-                            <div class="input-group">
-                              <select class="form-control"  >      
-                                <option selected="nbenfant" disabled=""> Nombre enfant</option>  
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                               
-                              </select>
-                             
-                            </div>
-                          </div>
-                        </div>
-                      </div>                     
-                      
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="input-group">               
-                                <input type="text" class="form-control" name="Login" placeholder="Login" required><span class="marge"></span><span class="marge"></span>
-                            </div>
-                          
-                           <div class="input-group">               
-                                <input type="password" class="form-control" name="Motdepasse" placeholder="Mot de passe" required>
-                           </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-check form-check-flat form-check-primary">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input"> Enregistrer les informations </label>
-                      </div>
-                      <button type="submit" class="btn btn-gradient-primary mr-2">Connexion</button>
-                      <button class="btn btn-light">Annuler</button>
+    <div id="pattern-switcher">
+      <br>
+    <h6> Bienvenu <%=nom%> <%=prenom%> </h6>
+      
+    </div>
+    <div id="patter-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    
+ 
+                        
                     </form>
                   </div>
                 </div>
               </div>
           </div>
             
-
+             
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
@@ -437,5 +184,20 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+    
+    
+    
+     
+        <!-- js pubaccueil --!>
+     <!-- Jquery-2.2.4 js -->
+    <script src="jspubaccueil/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="jspubaccueil/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="jspubaccueil/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="jspubaccueil/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="jspubaccueil/active.js"></script>
   </body>
 </html>

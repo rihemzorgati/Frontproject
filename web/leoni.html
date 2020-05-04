@@ -19,20 +19,13 @@
     <link rel="shortcut icon" href="assets/images/logo.png" />
     
 
-    <!-- Css pub accueil -->
+        <link rel="stylesheet" href="cours.css">
 
-    <!-- Core Stylesheet -->
-    <link href="stylepubaccueil.css" rel="stylesheet">
-
-    <!-- Responsive CSS -->
-    <link href="csspubaccueil/responsive/responsive.css" rel="stylesheet">
-    <!-- End Css pub accueil -->
+ 
   </head>
   <body>
-       <%
-          String nom = session.getAttribute("Nom").toString();
-          String prenom = session.getAttribute("Prenom").toString();
-     %>
+      
+      
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -44,7 +37,7 @@
           
           <div class="search-field d-none d-md-block">
               
-                 <form class="form-sample" action="id">
+              <form class="form-sample" action="id" method="post">
                      
                      <table>
                           
@@ -71,7 +64,8 @@
                     
                         <td> </td>
                         <td>
-                            <a href="mpoub_1.html"> <h6> Mot de passe oublié? </h6></a>
+                            
+                            <a href="mpoub_1.html"> <h6> Mot de passe oubliÃ©? </h6></a>
                         </td>
                 
                    
@@ -85,33 +79,17 @@
       <div class="container-fluid page-body-wrapper"><!-- bordure grip en haut-->
         <div class="main-panel"><!-- bordure footre-->
           <div class="content-wrapper"> <!-- bordure gris lkol-->
-              <div class="row"> 
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body">                    
-                    <form action="Ajout_utilisateur.jsp">
-                        <div class="header-w3l">
-                            <h1>   <span>L</span>ps<span>P</span>lus </h1>
-                            </div>
-                        
-    <div id="pattern-switcher">
-      <br>
-    <h6> Bienvenu <%=nom%> <%=prenom%> </h6>
-      
-    </div>
-    <div id="patter-close">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    
- 
-                        
-                    </form>
-                  </div>
-                </div>
-              </div>
-          </div>
+              
+              
             
-             
+              
+              <div class="conteneur1">
+                  <div class="d1">
+                      <img src="assets/images/5.jpg"/>
+                      <img src="assets/images/1.jpg"/>
+                  </div>
+              </div>
+
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
@@ -145,7 +123,7 @@
 					<div class="col-md-6 widget">
 						<h3 class="widget-title">Info</h3>
 						<div class="widget-body">
-							<p>cette application permet d'améliorer vos penser et de gagner plusieurs cadeaux selon votre idée</p>
+							<p>cette application permet d'amÃ©liorer vos penser et de gagner plusieurs cadeaux selon votre idÃ©e</p>
 						</div>
 					</div>
 
@@ -154,7 +132,7 @@
 		</div>
               
              
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">" Agissez comme s'il était impossible d'échouer. "  <i class="mdi mdi-heart text-danger"></i> 
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">" Agissez comme s'il Ã©tait impossible d'Ã©chouer. "  <i class="mdi mdi-heart text-danger"></i> 
                  <span class="marge"></span>
                   <span class="marge"></span>
                   <span class="marge"></span>
@@ -184,20 +162,5 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
-    
-    
-    
-     
-        <!-- js pubaccueil --!>
-     <!-- Jquery-2.2.4 js -->
-    <script src="jspubaccueil/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="jspubaccueil/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap-4 js -->
-    <script src="jspubaccueil/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins JS -->
-    <script src="jspubaccueil/others/plugins.js"></script>
-    <!-- Active JS -->
-    <script src="jspubaccueil/active.js"></script>
   </body>
 </html>

@@ -34,6 +34,14 @@
           String prenom = session.getAttribute("Prenom").toString();
           String Photo = session.getAttribute("Photo").toString();          
           %>
+          
+           <!-- Background Pattern Swither -->
+    <div id="pattern-switcher">
+        Bienvenu
+    </div>
+    <div id="patter-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -297,8 +305,7 @@
               
                   <!-- ****** Welcome Post Area Start ****** -->
     <section class="welcome-post-sliders owl-carousel">
-
-        <!-- Single Slide -->
+         <!-- Single Slide -->
         <div class="welcome-single-slide">
             <!-- Post Thumb -->
             <img src="assets/images/categorie1/centrifigeuse.jpg" alt="">
@@ -349,7 +356,7 @@
         <!-- Single Slide -->
         <div class="welcome-single-slide">
             <!-- Post Thumb -->
-            <img src="assets/images/categorie4/living.jpg" alt="">
+            <img src="assets/images/categorie1/seche_cheveux.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
                 <div class="post-date-commnents d-flex">
