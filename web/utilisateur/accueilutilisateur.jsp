@@ -35,6 +35,13 @@
           String prenom = session.getAttribute("Prenom").toString();
           String Photo = session.getAttribute("Photo").toString();          
           %>
+	    <div id="pattern-switcher">
+        Bienvenu
+    </div>
+    <div id="patter-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>  	  
+	  
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -45,16 +52,7 @@
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
           </button>
-          <div class="search-field d-none d-md-block">
-            <form class="d-flex align-items-center h-100" action="#">
-              <div class="input-group">
-                <div class="input-group-prepend bg-transparent">
-                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Recherche">
-              </div>
-            </form>
-          </div>
+         
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -217,7 +215,7 @@
             </li>
                         
             <li class="nav-item">
-              <a class="nav-link" href="propositions_archivées.jsp">
+              <a class="nav-link" href="propositions_archivees.jsp">
                 <span class="menu-title">Propositions archivées</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
@@ -287,10 +285,7 @@
             <img src="assets/images/categorie1/centrifigeuse.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
-                <div class="post-date-commnents d-flex">
-                    <a href="#">May 19, 2017</a>
-                    <a href="#">5 Comment</a>
-                </div>
+               
                 <a href="#">
                     <h5>Centrifugeuse Fruits et Legumes, Aicok , Extracteur de Jus</h5>
                 </a>
@@ -303,10 +298,7 @@
             <img src="assets/images/categorie5/chambre_enfant.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
-                <div class="post-date-commnents d-flex">
-                    <a href="#">May 19, 2017</a>
-                    <a href="#">5 Comment</a>
-                </div>
+                
                 <a href="#">
                     <h5>OEuf NYC, une marque de meubles design pour enfants de haute qualité.</h5>
                 </a>
@@ -319,10 +311,7 @@
             <img src="assets/images/categorie1/friteuse.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
-                <div class="post-date-commnents d-flex">
-                    <a href="#">May 19, 2017</a>
-                    <a href="#">5 Comment</a>
-                </div>
+                
                 <a href="#">
                     <h5>Ambiano</h5>
                 </a>
@@ -335,12 +324,9 @@
             <img src="assets/images/categorie1/seche_cheveux.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
-                <div class="post-date-commnents d-flex">
-                    <a href="#">May 19, 2017</a>
-                    <a href="#">5 Comment</a>
-                </div>
+               
                 <a href="#">
-                    <h5>LIVING TV SYMPHONIE SCANDINAVE</h5>
+                    <h5>Séche cheveux Pro TECHWOOD Noir, Puissance: 1800W</h5>
                 </a>
             </div>
         </div>
@@ -351,10 +337,7 @@
             <img src="assets/images/categorie5/salon.jpg" alt="">
             <!-- Overlay Text -->
             <div class="project_title">
-                <div class="post-date-commnents d-flex">
-                    <a href="#">May 19, 2017</a>
-                    <a href="#">5 Comment</a>
-                </div>
+              
                 <a href="#">
                     <h5>Le plus beau est à venir. </h5>
                 </a>
@@ -362,8 +345,111 @@
         </div>
 
     </section>
+	      
+	       <section class="categories_area clearfix" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+                        <img src="assets/images/categorie6/cuisine.jpg" alt="">      
+			<div class="col-md-12">
+                </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+			
+			<br>
+			<br>
+			<label>Vous rêvez d'une cuisine équipée entièrement aménagée sur mesure selon vos besoins ? SCHMIDT vous propose de découvrir son univers cuisine : des lignes design, des matériaux nobles, des couleurs modernes ou intemporelles, nos modèles de cuisines se déclinent dans tous les styles. </label>
+		
+			<div class="col-md-12">
+                </div>
+                    </div>
+                </div>
+            </div>
+	    <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+                        <img src="assets/images/categorie6/dressing.jpg" alt="">      
+			<div class="col-md-12">
+                </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+			<br>
+			<br>
+			<label>Peu importe la taille de votre maison ou appartement, nous avons tous besoin d'un espace de rangement pour nos affaires : chaussures, vêtements, accessoires? Disposer d'un dressing sur mesure est la meilleure solution pour cela, car il s'adapte à votre espace et permet un véritable gain de place, pour optimiser votre agencement intérieur.</label>
+			<div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    
+        </div>
+    </section>            
+		
             
+            <div class="instargram_area owl-carousel section_padding_100_0 clearfix" id="portfolio">
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie6/omra.jpg" alt="">
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie5/voyage.jpg" alt="">
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie5/salle_de_bain.jpg" alt="">
+         </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie4/ldc.jpg" alt="">
             
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie2/chauffage.jpg" alt="">
+            
+              
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie2/bicyclette.jpg" alt="">
+           
+              
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie2/robot_de_cuisine.jpg" alt="">
+           
+        </div>
+
+        <!-- Instagram Item -->
+        <div class="instagram_gallery_item">
+            <!-- Instagram Thumb -->
+            <img src="assets/images/categorie3/tablette.jpg" alt="">
+	</div>
+	    </div>
+        </div>
+
+    </div>	 
         
           </div>
           <!-- content-wrapper ends -->

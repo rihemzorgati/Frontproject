@@ -19,9 +19,10 @@
     <link rel="shortcut icon" href="assets/images/logo.png" />
     
 
-    
+
   </head>
-  <body>   
+  <body>
+     
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -33,7 +34,9 @@
           
           <div class="search-field d-none d-md-block">
               
-              <form class="form-sample" action="id" method="post">
+               
+              
+                 <form class="form-sample" action="id">
                      
                      <table>
                           
@@ -41,7 +44,7 @@
                         <td>
                             <div class="d-flex align-items-center mr-4 text-muted font-weight-light">
                             <i class="mdi mdi-account-outline icon-sm mr-2"></i>
-                            <input type="text" class="form-control form-control-lg" name="Login" placeholder="Login" required>
+                        <input type="text" class="form-control form-control-lg" name="Login" placeholder="Login" required>
                             </div>
                         </td>
                         <td>
@@ -57,14 +60,17 @@
                  <button type="submit" class="btn btn-gradient-primary">Connexion</button>
                     </td>
                     </tr>
-                    
-                        <td> </td>
+                    <tr>
+                        
                         <td>
-                            
-                            <a href="mpoub_1.html"> <h6> Mot de passe oublié? </h6></a>
-                        </td>
-                
+                          
                    
+                        </td>
+                      
+                        <td>
+                            <a href="mpoub_1.html"> <h6> Mot de passe oublié? </h6></a>
+                        </td>                
+                     </tr>
                         </table> 
                 </form>
               
@@ -75,11 +81,11 @@
       <div class="container-fluid page-body-wrapper"><!-- bordure grip en haut-->
         <div class="main-panel"><!-- bordure footre-->
           <div class="content-wrapper"> <!-- bordure gris lkol-->
-              <div class="row"> 
+                          <div class="row"> 
               <div class="col-12">
                 <div class="card">
                   <div class="card-body">                    
-                    <form action="Ajout_utilisateur.jsp">
+                    <form class="form-sample" action="ajout_utilisateur">
                         <div class="header-w3l">
                             <h1>   <span>L</span>ps<span>P</span>lus </h1>
                         </div>
@@ -88,11 +94,11 @@
                         <div class="col-md-6">
                           <div class="form-group row">
                             <div class="input-group">                                    
-                                <input type="text" class="form-control" name="Matricule" placeholder="Matricule" required><span class="marge"></span><span class="marge"></span>
+                                <input type="text" class="form-control" name="Matricule" placeholder="Matricule"><span class="marge"></span><span class="marge"></span>
                             </div>
                          
                             <div class="input-group">               
-                                <input type="text" class="form-control" name="CIN" placeholder="CIN" required>
+                                <input type="text" class="form-control" name="CIN" placeholder="CIN">
                             </div>
                           </div>
                         </div>
@@ -102,11 +108,11 @@
                         <div class="col-md-6">
                           <div class="form-group row">
                             <div class="input-group">               
-                                <input type="text" class="form-control" name="Nom" placeholder="Nom" required><span class="marge"></span><span class="marge"></span>
+                                <input type="text" class="form-control" name="Nom" placeholder="Nom"><span class="marge"></span><span class="marge"></span>
                             </div>
                           
                             <div class="input-group">               
-                                <input type="text" class="form-control" name="Prenom" placeholder="Prénom" required>
+                                <input type="text" class="form-control" name="Prenom" placeholder="Prénom">
                             </div>
                           </div>
                         </div>
@@ -129,7 +135,7 @@
                               </div>
                             </div>
                          
-                     
+                            
                                <label class="col-sm-3 col-form-label">Date naissance</label> 
                                   
                                <div class="col-sm-9">                                
@@ -234,7 +240,7 @@
                           <div class="form-group row">
                             <div class="input-group"> 
                                 <a  id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                                    <input type="text" class="form-control" name="Telephone" placeholder="Téléphone" required>
+                                    <input type="text" class="form-control" name="Telephone" placeholder="Téléphone">
                                 </a> 
                                 <div class="dropdown-menu dropdown-menu-right " >
                                       <h6 class="p-3 mb-0">8 chiffres</h6>
@@ -244,7 +250,7 @@
          
                  
                             <div class="input-group">               
-                                <input type="text" class="form-control" name="Fixe" placeholder="Fixe" required>
+                                <input type="text" class="form-control" name="Fixe" placeholder="Fixe">
                             </div>
                           </div>
                         </div>
@@ -262,7 +268,7 @@
                             </div>
                          
                              <div class="input-group">               
-                                 <input type="text" class="form-control" name="Adresse" placeholder="Adresse" required>
+                                 <input type="text" class="form-control" name="Adresse" placeholder="Adresse">
                              </div>
                           </div>
                         </div>
@@ -272,12 +278,12 @@
                         <div class="col-md-6">
                           <div class="form-group row">
                              <div class="input-group">               
-                                <input type="text" class="form-control" name="Codepostale" placeholder="Code postale" required><span class="marge"></span><span class="marge"></span>
+                                <input type="text" class="form-control" name="Codepostale" placeholder="Code postale"><span class="marge"></span><span class="marge"></span>
                              </div>
                          
                             <div class="input-group">
                                 <a id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                                    <input type="email" class="form-control" name="Email" placeholder="Email" required>
+                                    <input type="email" class="form-control" name="Email" placeholder="Email">
                                 </a> 
                                 <div class="dropdown-menu dropdown-menu-right " >
                                       <h6 class="p-3 mb-0">x.y@leoni.com</h6>
@@ -336,18 +342,18 @@
                         <div class="col-md-6">
                           <div class="form-group row">
                             <div class="input-group">               
-                                <input type="text" class="form-control" name="Login" placeholder="Login" required><span class="marge"></span><span class="marge"></span>
+                                <input type="text" class="form-control" name="Login" placeholder="Login"><span class="marge"></span><span class="marge"></span>
                             </div>
                           
                            <div class="input-group">               
-                                <input type="password" class="form-control" name="Motdepasse" placeholder="Mot de passe" required>
+                                <input type="password" class="form-control" name="Motdepasse" placeholder="Mot de passe">
                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="form-check form-check-flat form-check-primary">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input"> Enregistrer les informations </label>
+                          <input type="checkbox" class="form-check-input"> Enregistrer </label>
                       </div>
                       <button type="submit" class="btn btn-gradient-primary mr-2">Connexion</button>
                       <button class="btn btn-light">Annuler</button>

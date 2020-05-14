@@ -3,6 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import controller.connexionController;
 
 public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -41,6 +44,19 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
+      out.write("\n");
+      out.write(" \n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+      String msg = session.getAttribute("msg").toString(); 
+      
+      
+      
+      
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("  <head>\n");
@@ -62,9 +78,9 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <link rel=\"shortcut icon\" href=\"assets/images/logo.png\" />\n");
       out.write("    \n");
       out.write("\n");
-      out.write("\n");
+      out.write("    \n");
       out.write("  </head>\n");
-      out.write("  <body>\n");
+      out.write("  <body>   \n");
       out.write("     \n");
       out.write("    <div class=\"container-scroller\">\n");
       out.write("      <!-- partial:partials/_navbar.html -->\n");
@@ -77,34 +93,7 @@ public final class accueil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          \n");
       out.write("          <div class=\"search-field d-none d-md-block\">\n");
       out.write("              \n");
-      out.write("               ");
- 
- try { 
-                connexionController conn = new connexionController();
-                Connection c= conn.getConnection();
-                String req="select * from utilisateur where Matricule="+Matricule+" and Etat=0";
-                System.out.print(req);
-                conn.executeSelect(req);               
-                ResultSet rs = conn.executeSelect(req);
-                                      
-                while(rs.next())
-                {                             
-               cpt++;
-                }             
-                }  catch(Exception e)
-                    {
-                      System.out.print(e.toString());
-                    }
-                               
-if(cpt==1){ 
-
-
-                                
-      out.write("\n");
-      out.write("\n");
-      out.write("            \n");
-      out.write("              \n");
-      out.write("                 <form class=\"form-sample\" action=\"id\">\n");
+      out.write("              <form class=\"form-sample\" action=\"id\" method=\"post\">\n");
       out.write("                     \n");
       out.write("                     <table>\n");
       out.write("                          \n");
@@ -112,14 +101,14 @@ if(cpt==1){
       out.write("                        <td>\n");
       out.write("                            <div class=\"d-flex align-items-center mr-4 text-muted font-weight-light\">\n");
       out.write("                            <i class=\"mdi mdi-account-outline icon-sm mr-2\"></i>\n");
-      out.write("                        <input type=\"text\" class=\"form-control form-control-lg\" name=\"Login\" placeholder=\"Login\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control form-control-lg\" name=\"Login\" placeholder=\"Login\" required>\n");
       out.write("                            </div>\n");
       out.write("                        </td>\n");
       out.write("                        <td>\n");
       out.write("                   \n");
       out.write("                   <div class=\"d-flex align-items-center mr-4 text-muted font-weight-light\">\n");
       out.write("                        <i class=\"mdi mdi-lock\"></i><span class=\"marge\"></span>\n");
-      out.write("                      <input type=\"password\" class=\"form-control form-control-lg\" name=\"Motdepasse\" placeholder=\"Mot de passe\">\n");
+      out.write("                      <input type=\"password\" class=\"form-control form-control-lg\" name=\"Motdepasse\" placeholder=\"Mot de passe\" required>\n");
       out.write("                  </div>\n");
       out.write("                      \n");
       out.write("                   \n");
@@ -131,21 +120,14 @@ if(cpt==1){
       out.write("                    \n");
       out.write("                        <td> </td>\n");
       out.write("                        <td>\n");
+      out.write("                            \n");
       out.write("                            <a href=\"mpoub_1.html\"> <h6> Mot de passe oublié? </h6></a>\n");
       out.write("                        </td>\n");
       out.write("                \n");
       out.write("                   \n");
       out.write("                        </table> \n");
       out.write("                </form>\n");
-      out.write("                                ");
-
-             }
-else{
-response.sendRedirect("MessageErreur_Dejaexiste.html");
-
-}
-                
-      out.write("\n");
+      out.write("              \n");
       out.write("          </div>       \n");
       out.write("        </div>\n");
       out.write("      </nav>\n");
@@ -153,11 +135,17 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("      <div class=\"container-fluid page-body-wrapper\"><!-- bordure grip en haut-->\n");
       out.write("        <div class=\"main-panel\"><!-- bordure footre-->\n");
       out.write("          <div class=\"content-wrapper\"> <!-- bordure gris lkol-->\n");
-      out.write("                          <div class=\"row\"> \n");
+      out.write("              <div class=\"row\"> \n");
       out.write("              <div class=\"col-12\">\n");
       out.write("                <div class=\"card\">\n");
-      out.write("                  <div class=\"card-body\">                    \n");
-      out.write("                    <form class=\"form-sample\">\n");
+      out.write("                  <div class=\"card-body\"> \n");
+      out.write("\t\t      \n");
+      out.write("\t\t\t  \n");
+      out.write("\t\t      ");
+      out.print(msg);
+      out.write("\n");
+      out.write("\t\t      \n");
+      out.write("                    <form action=\"ajout_utilisateur\">\n");
       out.write("                        <div class=\"header-w3l\">\n");
       out.write("                            <h1>   <span>L</span>ps<span>P</span>lus </h1>\n");
       out.write("                        </div>\n");
@@ -166,11 +154,11 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                        <div class=\"col-md-6\">\n");
       out.write("                          <div class=\"form-group row\">\n");
       out.write("                            <div class=\"input-group\">                                    \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Matricule\" placeholder=\"Matricule\"><span class=\"marge\"></span><span class=\"marge\"></span>\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Matricule\" placeholder=\"Matricule\" required><span class=\"marge\"></span><span class=\"marge\"></span>\n");
       out.write("                            </div>\n");
       out.write("                         \n");
       out.write("                            <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"CIN\" placeholder=\"CIN\">\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"CIN\" placeholder=\"CIN\" required>\n");
       out.write("                            </div>\n");
       out.write("                          </div>\n");
       out.write("                        </div>\n");
@@ -180,11 +168,11 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                        <div class=\"col-md-6\">\n");
       out.write("                          <div class=\"form-group row\">\n");
       out.write("                            <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Nom\" placeholder=\"Nom\"><span class=\"marge\"></span><span class=\"marge\"></span>\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Nom\" placeholder=\"Nom\" required><span class=\"marge\"></span><span class=\"marge\"></span>\n");
       out.write("                            </div>\n");
       out.write("                          \n");
       out.write("                            <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Prenom\" placeholder=\"Prénom\">\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Prenom\" placeholder=\"Prénom\" required>\n");
       out.write("                            </div>\n");
       out.write("                          </div>\n");
       out.write("                        </div>\n");
@@ -207,11 +195,11 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                              </div>\n");
       out.write("                            </div>\n");
       out.write("                         \n");
-      out.write("                            \n");
+      out.write("                     \n");
       out.write("                               <label class=\"col-sm-3 col-form-label\">Date naissance</label> \n");
       out.write("                                  \n");
       out.write("                               <div class=\"col-sm-9\">                                \n");
-      out.write("                                <select class=\"form-controll\">\n");
+      out.write("                                <select class=\"form-controll\" name=\"jour\">\n");
       out.write("                                <option>1</option>\n");
       out.write("                                <option>2</option>\n");
       out.write("                                <option>3</option>\n");
@@ -244,7 +232,7 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                                <option>30</option>\n");
       out.write("                                <option>31</option>     \n");
       out.write("                                </select>              \n");
-      out.write("                                <select class=\"form-controll\">\n");
+      out.write("                                <select class=\"form-controll\" name=\"mois\">\n");
       out.write("                                <option>Janvier</option>\n");
       out.write("                                <option>Février</option>\n");
       out.write("                                <option>Mars</option>\n");
@@ -258,7 +246,7 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                                <option>Nouvembre</option>\n");
       out.write("                                <option>Décembre</option>\n");
       out.write("                                </select>\n");
-      out.write("                                <select class=\"form-controll\">\n");
+      out.write("                                <select class=\"form-controll\" name=\"annees\">\n");
       out.write("                                <option>1980</option>\n");
       out.write("                                <option>1981</option>\n");
       out.write("                                <option>1982</option>\n");
@@ -311,8 +299,8 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                        <div class=\"col-md-6\">\n");
       out.write("                          <div class=\"form-group row\">\n");
       out.write("                            <div class=\"input-group\"> \n");
-      out.write("                                <a class=\"nav-link count-indicator\" id=\"messageDropdown\" href=\"#\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n");
-      out.write("                                    <input type=\"text\" class=\"form-control\" name=\"Telephone\" placeholder=\"Téléphone\">\n");
+      out.write("                                <a  id=\"messageDropdown\" href=\"#\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n");
+      out.write("                                    <input type=\"text\" class=\"form-control\" name=\"Telephone\" placeholder=\"Téléphone\" required>\n");
       out.write("                                </a> \n");
       out.write("                                <div class=\"dropdown-menu dropdown-menu-right \" >\n");
       out.write("                                      <h6 class=\"p-3 mb-0\">8 chiffres</h6>\n");
@@ -322,7 +310,7 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("         \n");
       out.write("                 \n");
       out.write("                            <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Fixe\" placeholder=\"Fixe\">\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Fixe\" placeholder=\"Fixe\" required>\n");
       out.write("                            </div>\n");
       out.write("                          </div>\n");
       out.write("                        </div>\n");
@@ -332,7 +320,7 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                        <div class=\"col-md-6\">\n");
       out.write("                          <div class=\"form-group row\">\n");
       out.write("                            <div class=\"input-group\">\n");
-      out.write("                              <select class=\"form-control\">\n");
+      out.write("                              <select class=\"form-control\" name=\"Ville\">\n");
       out.write("                                  <option selected=\"Ville\" disabled> Ville </option>\n");
       out.write("                                <option>Tunisie</option>\n");
       out.write("                                <option>France </option>\n");
@@ -340,7 +328,7 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                            </div>\n");
       out.write("                         \n");
       out.write("                             <div class=\"input-group\">               \n");
-      out.write("                                 <input type=\"text\" class=\"form-control\" name=\"Adresse\" placeholder=\"Adresse\">\n");
+      out.write("                                 <input type=\"text\" class=\"form-control\" name=\"Adresse\" placeholder=\"Adresse\" required>\n");
       out.write("                             </div>\n");
       out.write("                          </div>\n");
       out.write("                        </div>\n");
@@ -350,16 +338,18 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                        <div class=\"col-md-6\">\n");
       out.write("                          <div class=\"form-group row\">\n");
       out.write("                             <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Codepostale\" placeholder=\"Code postale\"><span class=\"marge\"></span><span class=\"marge\"></span>\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Codepostale\" placeholder=\"Code postale\" required><span class=\"marge\"></span><span class=\"marge\"></span>\n");
       out.write("                             </div>\n");
       out.write("                         \n");
       out.write("                            <div class=\"input-group\">\n");
-      out.write("                                <a class=\"nav-link count-indicator\" id=\"messageDropdown\" href=\"#\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n");
-      out.write("                                    <input type=\"email\" class=\"form-control\" name=\"Email\" placeholder=\"Email\">\n");
+      out.write("                                <a id=\"messageDropdown\" href=\"#\" data-toggle=\"dropdown\" aria-expanded=\"false\">\n");
+      out.write("                                    <input type=\"email\" class=\"form-control\" name=\"Email\" placeholder=\"Email\" required>\n");
       out.write("                                </a> \n");
       out.write("                                <div class=\"dropdown-menu dropdown-menu-right \" >\n");
       out.write("                                      <h6 class=\"p-3 mb-0\">x.y@leoni.com</h6>\n");
-      out.write("                                </div>                            </div>\n");
+      out.write("                                </div>                            \n");
+      out.write("                            </div>\n");
+      out.write("                              \n");
       out.write("                          </div>\n");
       out.write("                        </div>\n");
       out.write("                      </div>\n");
@@ -412,18 +402,18 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("                        <div class=\"col-md-6\">\n");
       out.write("                          <div class=\"form-group row\">\n");
       out.write("                            <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Login\" placeholder=\"Login\"><span class=\"marge\"></span><span class=\"marge\"></span>\n");
+      out.write("                                <input type=\"text\" class=\"form-control\" name=\"Login\" placeholder=\"Login\" required><span class=\"marge\"></span><span class=\"marge\"></span>\n");
       out.write("                            </div>\n");
       out.write("                          \n");
       out.write("                           <div class=\"input-group\">               \n");
-      out.write("                                <input type=\"password\" class=\"form-control\" name=\"Motdepasse\" placeholder=\"Mot de passe\">\n");
+      out.write("                                <input type=\"password\" class=\"form-control\" name=\"Motdepasse\" placeholder=\"Mot de passe\" required>\n");
       out.write("                           </div>\n");
       out.write("                          </div>\n");
       out.write("                        </div>\n");
       out.write("                      </div>\n");
       out.write("                      <div class=\"form-check form-check-flat form-check-primary\">\n");
       out.write("                        <label class=\"form-check-label\">\n");
-      out.write("                          <input type=\"checkbox\" class=\"form-check-input\"> Enregistrer </label>\n");
+      out.write("                          <input type=\"checkbox\" class=\"form-check-input\"> Enregistrer les informations </label>\n");
       out.write("                      </div>\n");
       out.write("                      <button type=\"submit\" class=\"btn btn-gradient-primary mr-2\">Connexion</button>\n");
       out.write("                      <button class=\"btn btn-light\">Annuler</button>\n");
@@ -476,9 +466,13 @@ response.sendRedirect("MessageErreur_Dejaexiste.html");
       out.write("\t\t</div>\n");
       out.write("              \n");
       out.write("             \n");
-      out.write("              \n");
-      out.write("              <span class=\"float-none float-sm-right d-block mt-1 mt-sm-0 text-center\">\" Agissez comme s'il était impossible d'échouer. \"  <i class=\"mdi mdi-heart text-danger\"></i></span>\n");
-      out.write("              \n");
+      out.write("              <span class=\"float-none float-sm-right d-block mt-1 mt-sm-0 text-center\">\" Agissez comme s'il était impossible d'échouer. \"  <i class=\"mdi mdi-heart text-danger\"></i> \n");
+      out.write("                 <span class=\"marge\"></span>\n");
+      out.write("                  <span class=\"marge\"></span>\n");
+      out.write("                  <span class=\"marge\"></span>\n");
+      out.write("                  <a href=\"#\"> <i class=\"mdi mdi-arrow-up-bold\"></i></a>\n");
+      out.write("              </span>\n");
+      out.write("            \n");
       out.write("          </footer>\n");
       out.write("          <!-- partial -->\n");
       out.write("        </div>\n");

@@ -44,22 +44,12 @@
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="index.jsp"><img src="assets/images/logo.png" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
           </button>
-          <div class="search-field d-none d-md-block">
-            <form class="d-flex align-items-center h-100" action="#">
-              <div class="input-group">
-                <div class="input-group-prepend bg-transparent">
-                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Recherche">
-              </div>
-            </form>
-          </div>
+          
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -222,7 +212,7 @@
          
             
             <li class="nav-item">
-              <a class="nav-link" href="propositions_archivées.jsp">
+              <a class="nav-link" href="propositions_archivees.jsp">
                 <span class="menu-title">Propositions archivées</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
@@ -278,14 +268,14 @@
                 <div class="card">
                   <div class="card-body">
                     
-                      <form class="form-sample" action="update">                   
+                      <form class="form-sample" action="../update">                   
                       
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Matricule</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" value="<%=matricule%>" disabled/>
+                              <input type="text" class="form-control" name="Matricule" value="<%=matricule%>" disabled/>
                             </div>
                           </div>
                         </div>
@@ -350,14 +340,14 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Fixe</label>
                             <div class="col-sm-9">
-                              <input class="form-control" value="<%=fixe%>" required/>
+                              <input class="form-control" name="Fixe" value="<%=fixe%>" required/>
                             </div>
                           </div>
                         </div>
                       </div>     
                             
-                     <div class="row">
-                        <div class="col-md-6">
+			    <div class="row"> 
+                              <!--  <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Ville</label>
                             <div class="col-sm-9">
@@ -368,7 +358,9 @@
                               </select>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
+				
+				
                         <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Adresse</label>
@@ -400,7 +392,7 @@
                       
                       <div class="row">
                         
-                        <div class="col-md-6">
+                            <!--    <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Situation familiale</label>
                             <div class="col-sm-9">
@@ -414,8 +406,8 @@
                               </select>
                             </div>
                           </div>
-                        </div>
-                          <div class="col-md-6">
+                        </div>  -->
+                                  <!--  <div class="col-md-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Nombre d'enfant</label>
                             <div class="col-sm-9">
@@ -444,7 +436,7 @@
                               </select>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                       </div>                     
                       
                       <div class="row">
@@ -465,10 +457,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-check form-check-flat form-check-primary">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input"> Enregistrer </label>
-                      </div>
+                    
                       <button type="submit" class="btn btn-gradient-primary mr-2">Modifier</button>
                       <button class="btn btn-light">Annuler</button>
                     </form>

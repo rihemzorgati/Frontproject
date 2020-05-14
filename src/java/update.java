@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import controller.MD5Password;
 import controller.connexionController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -23,8 +23,7 @@ import javax.servlet.http.HttpSession;
 public class update extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -32,34 +31,33 @@ public class update extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-           HttpSession session= request.getSession();
-           String Matricule = request.getParameter("Matricule");  
-           String Telephone = request.getParameter("Telephone");  
-          
-           
-           
-           connexionController conn = new connexionController();
+	    throws ServletException, IOException {
+	response.setContentType("text/html;charset=UTF-8");
+	try (PrintWriter out = response.getWriter()) {
+	    /* TODO output your page here. You may use following sample code. */
+	    
+	    MD5Password md5 = new MD5Password(); 
+	    
+	   String matricule = request.getParameter("Matricule");
+	   String tel = request.getParameter("Telephone");
+	   String fixe = request.getParameter("Fixe");	   
+	 /*  String ville = request.getParameter("Ville");
+	   String adresse = request.getParameter("Adresse");
+	   String cp = request.getParameter("Codepostale");
+	   String sitfam = request.getParameter("Situationfamiliale");
+	   String nbenf = request.getParameter("Nbenfant");	       
+           String Login = request.getParameter("Login");  
+           String Motdepasse = md5.getEncodedPassword(request.getParameter("Motdepasse"));      
+
+	  */connexionController conn = new connexionController();
             Connection c= conn.getConnection();
-            String req="Update utilisateur set Telephone="+Telephone+" where Matricule=2 " ;
+	  
+           String req="Update utilisateur set Telephone="+tel+", Fixe="+fixe+" where Matricule="+matricule+"" ;
             System.out.print(req);
             int rs = conn.executeUpdate(req);
             conn.executeUpdate(req);
-          
-       
-               
-            
-               
-
-   
-            
-        } catch(Exception e)
-          {
-            System.out.print(e.toString());
-          }
+              	      response.sendRedirect("utilisateur/profil.jsp");
+	}
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -73,8 +71,8 @@ public class update extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+	    throws ServletException, IOException {
+	processRequest(request, response);
     }
 
     /**
@@ -87,8 +85,8 @@ public class update extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+	    throws ServletException, IOException {
+	processRequest(request, response);
     }
 
     /**
@@ -98,7 +96,7 @@ public class update extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+	return "Short description";
     }// </editor-fold>
 
 }

@@ -9,6 +9,7 @@ import controller.connexionController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,21 +42,22 @@ public class ChangerMP extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
         MD5Password md5 = new MD5Password();
         String Nouveaump = md5.getEncodedPassword(request.getParameter("Nouveaump"));
-        String confirmermp = request.getParameter("confirmermp");
-        String Matricule = request.getParameter("Matricule");
+        String Confirmermp = request.getParameter("confirmermp");
+	 String Email = request.getParameter("mail");
+     out.println(""+Email);
        
-        
         connexionController conn = new connexionController();
         Connection c= conn.getConnection();
-        String req="Update utilisateur set Motdepasse='"+Nouveaump+"' , Etat=1 where Matricule="+Matricule+" ";      
+        String req="Update utilisateur set Motdepasse='"+Nouveaump+"' , Etat=1 where Email='"+Email+"' ";      
         out.print(req);
-        int rs = conn.executeUpdate(req);    
-        conn.executeUpdate(req);
-        if (confirmermp==Nouveaump)
-                {
-            response.sendRedirect("index.html");         
-          }
-        
+            int rs = conn.executeUpdate(req);    
+         conn.executeUpdate(req); 
+          
+         if ( Nouveaump.equals(Confirmermp))
+         {
+             response.sendRedirect("accueil_1.html");
+         }
+         
         } catch(Exception e)
           {
             System.out.print(e.toString());

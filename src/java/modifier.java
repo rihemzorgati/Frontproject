@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import controller.MD5Password;
 import controller.connexionController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -36,35 +36,22 @@ public class modifier extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           HttpSession session= request.getSession();
+	   MD5Password md5 = new MD5Password();
            String Matricule = request.getParameter("Matricule");  
            String Nom = request.getParameter("Nom");  
            String Prenom = request.getParameter("Prenom");  
            String Email = request.getParameter("Email");
            String Login = request.getParameter("Login");  
-           String Motdepasse = request.getParameter("Motdepasse");
-           String Photo = request.getParameter("Photo");
+           String Motdepasse = request.getParameter("Motdepasse");            
            
-           
-           connexionController conn = new connexionController();
+            connexionController conn = new connexionController();
             Connection c= conn.getConnection();
-            String req="Update administrateur set Nom='"+Nom+"' , Prenom='"+Prenom+"' , Email='"+Email+"' , Login='"+Login+"' , Motdepasse= '"+Motdepasse+"' , Photo= '"+Photo+"' where Matricule=11 " ;
+            String req="Update administrateur set Matricule="+Matricule+" ,Nom='"+Nom+"' , Prenom='"+Prenom+"' , Email='"+Email+"' , Login='"+Login+"' , Motdepasse= '"+Motdepasse+"' " ;
             System.out.print(req);
             int rs = conn.executeUpdate(req);
             conn.executeUpdate(req);
-          
-       
-            session.setAttribute("Matricule", Matricule);
-            session.setAttribute("Nom", Nom);
-            session.setAttribute("Prenom", Prenom);
-            session.setAttribute("Email", Email);
-            session.setAttribute("Login", Login);
-            session.setAttribute("Motdepasse", Motdepasse);
-                 response.sendRedirect("accueil.html");
+                 response.sendRedirect("administrateur/profil.jsp");
             
-               
-
-           
             
         } catch(Exception e)
           {

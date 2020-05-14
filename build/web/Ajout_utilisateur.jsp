@@ -53,8 +53,9 @@
                             </div>
 
     <%
-      String Matricule = request.getParameter("Matricule");
+     
         try { 
+	     String Matricule = request.getParameter("Matricule");
                 connexionController conn1 = new connexionController();
                 Connection cc= conn1.getConnection();
                 String req1 ="select * from employee where Matricule="+Matricule+"";
@@ -72,7 +73,7 @@
         String Nom = request.getParameter("Nom");
         String Prenom = request.getParameter("Prenom");
         String Sexe = request.getParameter("Sexe");
-        String Datenaissance = request.getParameter("Datenaissance");
+        String dn = request.getParameter("Datenaissance");
         String Telephone = request.getParameter("Telephone");
         String Fixe = request.getParameter("Fixe");
         String Ville = request.getParameter("Ville");
@@ -89,14 +90,14 @@
          
                 connexionController conn = new connexionController();
                 Connection c= conn.getConnection();
-                String req="insert into utilisateur values("+Matricule+","+CIN+",'"+Nom+"','"+Prenom+"','"+Sexe+"','"+Datenaissance+"',"+Telephone+","+Fixe+",'"+Ville+"','"+Adresse+"',"+Codepostale+",'"+Email+"','"+Situationfamiliale+"',"+Nbenfant+",'"+Login+"','"+Motdepasse+"',"+Etat+", '"+Photo+"')";
+                String req="insert into utilisateur values("+Matricule+","+CIN+",'"+Nom+"','"+Prenom+"','"+Sexe+"','"+dn+"',"+Telephone+","+Fixe+",'"+Ville+"','"+Adresse+"',"+Codepostale+",'"+Email+"','"+Situationfamiliale+"',"+Nbenfant+",'"+Login+"','"+Motdepasse+"',"+Etat+", '"+Photo+"')";
                 System.out.print(req);
                 conn.executeInsert(req);
                 session.setAttribute("Matricule", Matricule);
                 session.setAttribute("Nom", Nom);
                 session.setAttribute("Prenom", Prenom);
                 session.setAttribute("Sexe", Sexe);
-                session.setAttribute("Datenaissance", Datenaissance);
+                session.setAttribute("Datenaissance", dn);
                 session.setAttribute("Telephone", Telephone);
                 session.setAttribute("Fixe", Fixe);
                 session.setAttribute("Ville", Ville);

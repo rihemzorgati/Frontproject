@@ -36,7 +36,7 @@ public class id extends HttpServlet {
     {
             response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) 
-        {//bienvenu foulen elfouleni
+        {
             HttpSession session= request.getSession();
             String Matricule="";  
             String CIN="";
@@ -55,6 +55,7 @@ public class id extends HttpServlet {
             String Photo="";
             String Etat="";
             String Proposition="";
+	    String Image="";
           
             MD5Password md5 = new MD5Password();
             String Login = request.getParameter("Login");           
@@ -128,8 +129,8 @@ public class id extends HttpServlet {
                int cpttt=0;
                while(rs2.next())
                {
-                   Proposition=rs2.getString(1);
-                   Matricule=rs2.getString(2);                   
+                   Proposition=rs2.getString(2);
+                   Matricule=rs2.getString(3);                   
                 cpttt++;
                }
            
@@ -163,6 +164,21 @@ public class id extends HttpServlet {
             
             if (cpt!=0)
             {
+		 req="select * from categorie " ;
+               System.out.print(req);
+               ResultSet rs3 = conn.executeSelect(req);
+         
+               int cpttt=0;
+               while(rs3.next())
+               {
+                   Image=rs3.getString(2);
+                             
+                cpttt++;
+               }
+           
+                   session.setAttribute("Image", Image);
+		
+		
                    session.setAttribute("Matricule", Matricule);
                    session.setAttribute("Nom", Nom);
                    session.setAttribute("Prenom", Prenom);

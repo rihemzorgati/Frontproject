@@ -1,0 +1,451 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="controller.connexionController"%> 
+
+
+
+<%
+      String msg = session.getAttribute("msg").toString(); 
+      
+      
+      
+      %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LTN_Application</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/logo.png" />
+    
+
+    
+  </head>
+  <body>   
+     
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="index.jsp"><img src="assets/images/logo.png" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          
+          <div class="search-field d-none d-md-block">
+              
+              <form class="form-sample" action="id" method="post">
+                     
+                     <table>
+                          
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center mr-4 text-muted font-weight-light">
+                            <i class="mdi mdi-account-outline icon-sm mr-2"></i>
+                            <input type="text" class="form-control form-control-lg" name="Login" placeholder="Login" required>
+                            </div>
+                        </td>
+                        <td>
+                   
+                   <div class="d-flex align-items-center mr-4 text-muted font-weight-light">
+                        <i class="mdi mdi-lock"></i><span class="marge"></span>
+                      <input type="password" class="form-control form-control-lg" name="Motdepasse" placeholder="Mot de passe" required>
+                  </div>
+                      
+                   
+                    </td>
+                    <td>
+                 <button type="submit" class="btn btn-gradient-primary">Connexion</button>
+                    </td>
+                    </tr>
+                    
+                        <td> </td>
+                        <td>
+                            
+                            <a href="mpoub_1.html"> <h6> Mot de passe oublié? </h6></a>
+                        </td>
+                
+                   
+                        </table> 
+                </form>
+              
+          </div>       
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper"><!-- bordure grip en haut-->
+        <div class="main-panel"><!-- bordure footre-->
+          <div class="content-wrapper"> <!-- bordure gris lkol-->
+              <div class="row"> 
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body"> 
+		      
+			  
+		      <%=msg%>
+		      
+                    <form action="ajout_utilisateur">
+                        <div class="header-w3l">
+                            <h1>   <span>L</span>ps<span>P</span>lus </h1>
+                        </div>
+                        <strong> <h2> Créer un compte </h2> </strong>
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <div class="input-group">                                    
+                                <input type="text" class="form-control" name="Matricule" placeholder="Matricule" required><span class="marge"></span><span class="marge"></span>
+                            </div>
+                         
+                            <div class="input-group">               
+                                <input type="text" class="form-control" name="CIN" placeholder="CIN" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <div class="input-group">               
+                                <input type="text" class="form-control" name="Nom" placeholder="Nom" required><span class="marge"></span><span class="marge"></span>
+                            </div>
+                          
+                            <div class="input-group">               
+                                <input type="text" class="form-control" name="Prenom" placeholder="Prénom" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                     <div class="row">                       
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Sexe</label>
+                            <div class="col-sm-4">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked> Homme </label>
+                              </div>
+                            </div>
+                            <div class="col-sm-5">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2"> Femme </label>
+                              </div>
+                            </div>
+                         
+                     
+                               <label class="col-sm-3 col-form-label">Date naissance</label> 
+                                  
+                               <div class="col-sm-9">                                
+                                <select class="form-controll" name="jour">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>     
+                                </select>              
+                                <select class="form-controll" name="mois">
+                                <option>Janvier</option>
+                                <option>Février</option>
+                                <option>Mars</option>
+                                <option>Avril</option>
+                                <option>Mai</option>
+                                <option>Juin</option>
+                                <option>Juillet</option>
+                                <option>Août</option>
+                                <option>Septembre</option>
+                                <option>Octobre</option>
+                                <option>Nouvembre</option>
+                                <option>Décembre</option>
+                                </select>
+                                <select class="form-controll" name="annees">
+                                <option>1980</option>
+                                <option>1981</option>
+                                <option>1982</option>
+                                <option>1983</option>
+                                <option>1984</option>
+                                <option>1985</option>
+                                <option>1986</option>
+                                <option>1987</option>
+                                <option>1988</option>
+                                <option>1989</option>
+                                <option>1990</option>
+                                <option>1991</option>
+                                <option>1992</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                                <option>1995</option>
+                                <option>1996</option>
+                                <option>1997</option>
+                                <option>1998</option>
+                                <option>1999</option>
+                                <option>2000</option>
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                                <option>2004</option>
+                                <option>2005</option>
+                                <option>2006</option>
+                                <option>2007</option>
+                                <option>2008</option>
+                                <option>2009</option>
+                                <option>2010</option>
+                                <option>2011</option>
+                                <option>2012</option>
+                                <option>2013</option>
+                                <option>2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                              </select>                              
+                            </div>
+                       
+                          </div>
+                        </div>
+                      </div>
+                      
+                       <div class="row">                       
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <div class="input-group"> 
+                                <a  id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                    <input type="text" class="form-control" name="Telephone" placeholder="Téléphone" required>
+                                </a> 
+                                <div class="dropdown-menu dropdown-menu-right " >
+                                      <h6 class="p-3 mb-0">8 chiffres</h6>
+                                </div>
+                                <span class="marge"></span><span class="marge"></span> 
+                            </div>
+         
+                 
+                            <div class="input-group">               
+                                <input type="text" class="form-control" name="Fixe" placeholder="Fixe" required>
+                            </div>
+                          </div>
+                        </div>
+                      </div>     
+                            
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <div class="input-group">
+                              <select class="form-control" name="Ville">
+                                  <option selected="Ville" disabled> Ville </option>
+                                <option>Tunisie</option>
+                                <option>France </option>
+                              </select><span class="marge"></span><span class="marge"></span>
+                            </div>
+                         
+                             <div class="input-group">               
+                                 <input type="text" class="form-control" name="Adresse" placeholder="Adresse" required>
+                             </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                             <div class="input-group">               
+                                <input type="text" class="form-control" name="Codepostale" placeholder="Code postale" required><span class="marge"></span><span class="marge"></span>
+                             </div>
+                         
+                            <div class="input-group">
+                                <a id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                                    <input type="email" class="form-control" name="Email" placeholder="Email" required>
+                                </a> 
+                                <div class="dropdown-menu dropdown-menu-right " >
+                                      <h6 class="p-3 mb-0">x.y@leoni.com</h6>
+                                </div>                            
+                            </div>
+                              
+                          </div>
+                        </div>
+                      </div>
+                        
+                      <div class="row">                        
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <div class="input-group">
+                              <select class="form-control">
+                              <option selected="situationfamiliale" disabled> Situation familiale</option>                                 
+                                <option>Célibataire</option>
+                                <option>En couple</option>
+                                <option>Marié(e)</option>
+                                <option>Divorcé(e)</option>                              
+                              </select><span class="marge"></span><span class="marge"></span>
+                            </div>
+                            <div class="input-group">
+                              <select class="form-control"  >      
+                                <option selected="nbenfant" disabled=""> Nombre enfant</option>  
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                               
+                              </select>
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>                     
+                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <div class="input-group">               
+                                <input type="text" class="form-control" name="Login" placeholder="Login" required><span class="marge"></span><span class="marge"></span>
+                            </div>
+                          
+                           <div class="input-group">               
+                                <input type="password" class="form-control" name="Motdepasse" placeholder="Mot de passe" required>
+                           </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-check form-check-flat form-check-primary">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"> Enregistrer les informations </label>
+                      </div>
+                      <button type="submit" class="btn btn-gradient-primary mr-2">Connexion</button>
+                      <button class="btn btn-light">Annuler</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+            
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="foo n  ter">
+              		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p> Phone: +499112023-0<br>
+                                                            Fax: +499112023-455<br>
+								<a href="mailto:#">info@leoni.com</a><br>
+								<br>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Nous contact</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+																
+								<a href="http://www.facebook.com"><i class="mdi mdi-facebook"></i></a>
+                                                        <p> <a href="#">ajmi.adem@leoni.com</a> </p>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Info</h3>
+						<div class="widget-body">
+							<p>cette application permet d'améliorer vos penser et de gagner plusieurs cadeaux selon votre idée</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+              
+             
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">" Agissez comme s'il était impossible d'échouer. "  <i class="mdi mdi-heart text-danger"></i> 
+                 <span class="marge"></span>
+                  <span class="marge"></span>
+                  <span class="marge"></span>
+                  <a href="#"> <i class="mdi mdi-arrow-up-bold"></i></a>
+              </span>
+            
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
